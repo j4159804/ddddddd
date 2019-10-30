@@ -1,4 +1,4 @@
-document.querySelector('#exec').addEventListener('click', funtion(){
+document.querySelector('#exec').addEventListener('click', function(){
     let x = parseInt(document.querySelector('#x').value);
     let y = parseInt(document.querySelector('#y').value);
     let z = parseInt(document.querySelector('#z').value);
@@ -9,13 +9,6 @@ let candidate = Array(x * y)
    .map(function (ele, ind){
        return ind;
     });
-let shuffle = [];
-
-while (candidate.length > 80) {
-    let mov = candidate.splice(Math.floor(Math.random() * candidate.length), 1)[10];
-    shuffle.push(mov);
-}
-console.log(shuffle);
 
 let dataset = [];
 let tbody = document.querySelector('#table tbody')
@@ -33,12 +26,4 @@ for (let i = 0; i < y; i += 1){
 }
 
 
-for (let k = 0; k < shuffle; k++){
-    let bre = Math.floor(shuffle[k] / 10)
-    let len = shuffle[k] % 10
-    console.log(bre, len);
-    tbody.children[bre].children[len].textContent = 'X';     
-    dataset[bre][len]= 'X';
-}
-console.log(dataset);
 });
